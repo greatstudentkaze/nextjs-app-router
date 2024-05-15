@@ -1,3 +1,5 @@
+'use client';
+
 export const Aboba = () => {
   if (typeof window !== 'undefined') {
     throw new Error('CLIENT ERROR');

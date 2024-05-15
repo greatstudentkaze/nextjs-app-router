@@ -1,13 +1,16 @@
-import { GetServerSideProps, NextPage } from 'next';
+import {GetServerSideProps, NextPage} from 'next';
 
-const TestPage: NextPage<{}> = (props) => {
-    throw new Error('SERVER ERROR OCCURRED');
+const TestPage: NextPage<{ searchParams: { aaa: string } }> = ({searchParams}) => {
 
-  return (
-    <div>
-      test page
-    </div>
-  );
+    if (searchParams.aaa === '123') {
+        throw new Error('SERVER ERROR OCCURRED');
+    }
+
+    return (
+        <div>
+            test page
+        </div>
+    );
 };
 
 export default TestPage;
